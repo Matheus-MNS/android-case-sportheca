@@ -7,8 +7,8 @@
     >
     <fragment
         android:id="@+id/worldCupChampionsFragment"
-        android:name="com.example.casesportheca.feature.world_cup.presentation.WorldCupChampionsFragment"
+        android:name="com.matheus.casesportheca.feature.world_cup.presentation.WorldCupFragment"
         android:label="world_cup_champions_fragment"
-        tools:layout="@layout/world_cup_champions_fragment" />
+        tools:layout="@layout/world_cup_fragment" />
 
 </navigation>
