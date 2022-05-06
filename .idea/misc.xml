@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mathe/Documents/Repositories/android-case-sportheca/app/src/main/res/drawable/circle.xml" value="0.14" />
         <entry key="..\:/Users/mathe/Documents/Repositories/android-case-sportheca/app/src/main/res/drawable/circle_custom.xml" value="0.14" />
         <entry key="..\:/Users/mathe/Documents/Repositories/android-case-sportheca/app/src/main/res/drawable/custom_circle.xml" value="0.1235" />
+        <entry key="..\:/Users/mathe/Documents/Repositories/android-case-sportheca/app/src/main/res/drawable/image_circle.xml" value="0.14" />
+        <entry key="..\:/Users/mathe/Documents/Repositories/android-case-sportheca/app/src/main/res/drawable/img.xml" value="0.2985" />
         <entry key="..\:/Users/mathe/Documents/Repositories/android-case-sportheca/app/src/main/res/drawable/progress_bar_custom.xml" value="0.2985" />
         <entry key="..\:/Users/mathe/Documents/Repositories/android-case-sportheca/app/src/main/res/layout/activity_main.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/mathe/Documents/Repositories/android-case-sportheca/app/src/main/res/layout/fragment_world_cup_champions.xml" value="0.358695652173913" />
