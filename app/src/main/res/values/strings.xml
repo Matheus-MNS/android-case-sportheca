@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Case Sportheca</string>
     <string name="label_world_cup_champions">Copas do Mundo Vencidas</string>
+    <string name="label_world_cup_participated">Copas do Mundo Disputadas</string>
 </resources>

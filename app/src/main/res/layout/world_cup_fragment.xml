@@ -7,7 +7,7 @@
     tools:context="com.matheus.casesportheca.feature.world_cup.presentation.WorldCupFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/userIcon"
+        android:id="@+id/userIconImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="32dp"
@@ -17,52 +17,53 @@
         tools:src="@drawable/ic_user_icon" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/userName"
+        android:id="@+id/userNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userIcon"
+        app:layout_constraintTop_toBottomOf="@id/userIconImageView"
         tools:text="Usuário de Teste" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/countryName"
+        android:id="@+id/countryNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userName"
+        app:layout_constraintTop_toBottomOf="@id/userNameTextView"
         tools:text="Alemanha" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/positionName"
+        android:id="@+id/positionNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/countryName"
+        app:layout_constraintTop_toBottomOf="@id/countryNameTextView"
         tools:text="Atacante" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/percentage"
+        android:id="@+id/circleView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/custom_circle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/positionName">
+        app:layout_constraintTop_toBottomOf="@id/positionNameTextView">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/percentageNumber"
+            android:id="@+id/percentageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,33 +74,96 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/worldCupWinnerTitle"
+        android:id="@+id/worldCupWonTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/label_world_cup_champions"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/percentage" />
+        app:layout_constraintTop_toBottomOf="@id/circleView" />
 
     <ProgressBar
-        android:id="@+id/worldCupWinnerDynamic"
+        android:id="@+id/worldCupWonProgressBar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:progressDrawable="@drawable/custom_progressbar"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@id/worldCupWonPlaceTextView"
+        app:layout_constraintEnd_toStartOf="@id/worldCupWonPlaceTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/worldCupWinnerTitle" />
+        app:layout_constraintTop_toTopOf="@id/worldCupWonPlaceTextView" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/worldCupWonPlaceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintStart_toEndOf="@id/worldCupWinnerDynamic"
-        app:layout_constraintTop_toBottomOf="@id/worldCupWinnerTitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="32dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/worldCupWonProgressBar"
+        app:layout_constraintTop_toBottomOf="@id/worldCupWonTextView"
         tools:text="18" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/wordCupWonProportionalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/worldCupWonProgressBar"
+        app:layout_constraintStart_toStartOf="@id/worldCupWonProgressBar"
+        app:layout_constraintTop_toTopOf="@id/worldCupWonProgressBar"
+        tools:text="1.0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/worldCupParticipatedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/label_world_cup_participated"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/worldCupWonProgressBar" />
+
+    <ProgressBar
+        android:id="@+id/worldCupParticipatedProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@id/worldCupParticipatedPlaceTextView"
+        app:layout_constraintEnd_toStartOf="@id/worldCupParticipatedPlaceTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/worldCupParticipatedPlaceTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/worldCupParticipatedPlaceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="32dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/worldCupParticipatedProgressBar"
+        app:layout_constraintTop_toBottomOf="@id/worldCupParticipatedTextView"
+        tools:text="2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/wordCupParticipatedProportionalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/worldCupParticipatedProgressBar"
+        app:layout_constraintStart_toStartOf="@id/worldCupParticipatedProgressBar"
+        app:layout_constraintTop_toTopOf="@id/worldCupParticipatedProgressBar"
+        tools:text="4.0" />
 
     <ProgressBar
         android:id="@+id/loadingProgressBar"
@@ -110,6 +174,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
