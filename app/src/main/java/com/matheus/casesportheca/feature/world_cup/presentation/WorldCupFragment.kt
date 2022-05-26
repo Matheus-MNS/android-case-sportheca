@@ -7,9 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.makeramen.roundedimageview.RoundedTransformationBuilder
+import com.matheus.casesportheca.R
 import com.matheus.casesportheca.databinding.WorldCupFragmentBinding
 import com.matheus.casesportheca.feature.world_cup.domain.model.Player
 import com.squareup.picasso.Picasso
@@ -31,6 +34,7 @@ class WorldCupFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         handleObserver()
+        swipeRefresh()
     }
 
     private fun handleObserver() {
@@ -76,8 +80,8 @@ class WorldCupFragment : Fragment() {
         }
     }
 
-    private fun handleError(message: String) {
-
+    private fun handleError(errorCode: String) {
+        Toast.makeText(context, errorCode, Toast.LENGTH_LONG).show()
     }
 
     private fun convertUrl(url: String, imageView: ImageView) {
@@ -96,4 +100,13 @@ class WorldCupFragment : Fragment() {
             .into(imageView)
     }
 
+    private fun swipeRefresh() {
+        with(binding) {
+            pullToRefresh.setColorSchemeResources(androidx.appcompat.R.color.material_deep_teal_200)
+            pullToRefresh.setOnRefreshListener {
+                handleObserver()
+                pullToRefresh.isRefreshing = false
+            }
+        }
+    }
 }

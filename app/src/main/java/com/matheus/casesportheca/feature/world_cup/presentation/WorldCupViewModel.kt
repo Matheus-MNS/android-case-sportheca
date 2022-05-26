@@ -43,5 +43,6 @@ class WorldCupViewModel(private val getPlayerUseCase: GetPlayerUseCase) : ViewMo
     }
 
     private fun handleError(throwable: Throwable) {
+        error.value = throwable.message
     }
 }
