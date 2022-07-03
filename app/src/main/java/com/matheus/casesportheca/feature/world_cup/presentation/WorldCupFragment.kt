@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.google.android.material.snackbar.Snackbar
 import com.makeramen.roundedimageview.RoundedTransformationBuilder
 import com.matheus.casesportheca.R
 import com.matheus.casesportheca.databinding.WorldCupFragmentBinding
@@ -81,7 +82,7 @@ class WorldCupFragment : Fragment() {
     }
 
     private fun handleError(errorCode: String) {
-        Toast.makeText(context, errorCode, Toast.LENGTH_LONG).show()
+        Snackbar.make(binding.root, errorCode, Snackbar.LENGTH_LONG).show()
     }
 
     private fun convertUrl(url: String, imageView: ImageView) {
@@ -102,9 +103,8 @@ class WorldCupFragment : Fragment() {
 
     private fun swipeRefresh() {
         with(binding) {
-            pullToRefresh.setColorSchemeResources(androidx.appcompat.R.color.material_deep_teal_200)
             pullToRefresh.setOnRefreshListener {
-                handleObserver()
+                viewModel.getPlayer()
                 pullToRefresh.isRefreshing = false
             }
         }
