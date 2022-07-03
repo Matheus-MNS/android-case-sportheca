@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/worldCupChampionsFragment">
-    
+    app:startDestination="@id/worldCupChampionsFragment"
+    >
     <fragment
         android:id="@+id/worldCupChampionsFragment"
         android:name="com.matheus.casesportheca.feature.world_cup.presentation.WorldCupFragment"

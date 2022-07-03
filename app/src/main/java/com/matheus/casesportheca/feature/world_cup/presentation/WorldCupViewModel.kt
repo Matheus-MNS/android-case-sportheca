@@ -27,7 +27,7 @@ class WorldCupViewModel(private val getPlayerUseCase: GetPlayerUseCase) : ViewMo
         getPlayer()
     }
 
-    fun getPlayer() {
+    private fun getPlayer() {
         viewModelScope.launch {
             getPlayerUseCase()
                 .flowOn(Dispatchers.IO)
