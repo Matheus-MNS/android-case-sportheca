@@ -69,12 +69,12 @@ class WorldCupFragment : Fragment() {
             positionNameTextView.text = player.position
             percentageTextView.text = format("%.3f", player.percentage)
             worldCupWonProgressBar.progress = player.bars.worldCupsWon.max.toInt()
-            worldCupWonPlaceTextView.text = player.bars.worldCupsWon.place.toString()
+            worldCupWonPlaceTextView.text = (player.bars.worldCupsWon.place.toString() + "\u00BA")
             wordCupWonProportionalTextView.text =
                 format("%.1f", player.bars.worldCupsWon.proportional)
             worldCupParticipatedProgressBar.progress = player.bars.worldCupsParticipated.max.toInt()
             worldCupParticipatedPlaceTextView.text =
-                player.bars.worldCupsParticipated.place.toString()
+                (player.bars.worldCupsParticipated.place.toString() + "\u00BA")
             wordCupParticipatedProportionalTextView.text =
                 format("%.1f", player.bars.worldCupsParticipated.proportional)
         }
